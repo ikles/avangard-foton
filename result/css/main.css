@@ -1017,10 +1017,13 @@ form {
 .mslider__slide {
   height: 766px;
   position: relative; }
+  @media (min-width: 1280px) {
+    .mslider__slide {
+      height: calc(100vh - 108px); } }
   @media (max-width: 1024px) {
     .mslider__slide {
-      height: auto;
-      aspect-ratio: 1.777 / 1;
+      /*height: auto;
+    aspect-ratio: 1.777 / 1;*/
       padding-bottom: 200px; } }
   @media (max-width: 767px) {
     .mslider__slide {

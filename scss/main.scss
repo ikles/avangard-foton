@@ -1231,9 +1231,16 @@ form {
 .mslider__slide {
   height: 766px;
   position: relative;
+
+  @media (min-width: 1280px) {
+
+    height: calc(100vh - 108px);
+    
+  }
+  
   @media (max-width : 1024px) {
-    height: auto;
-    aspect-ratio: 1.777 / 1;
+    /*height: auto;
+    aspect-ratio: 1.777 / 1;*/
     padding-bottom: 200px;  
   }
   @media (max-width : 767px) {
@@ -3295,7 +3302,7 @@ details[open] .summary-icon[data-v-01291256] {
 
 
 .car-item__image__sl {
-  
+
 }
 
 .car-item__image__carousel-slide {  
