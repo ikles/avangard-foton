@@ -38,6 +38,57 @@ jQuery(document).ready(function( $ ) {
   });
 
 
+  $('.similar-car__sl .similar-car').each(function () {
+    const titleText = $(this).find('.similar-car__text__title').text();
+    const btn1 = $(this).find('.similar-car__button-1');
+    const btn2 = $(this).find('.similar-car__button-2');
+
+    btn1.click(function () {
+      $('.modal-outer .section-title.mb-4').text('Забронировать '+titleText);
+      $('.modal-outer').show();
+    });
+    btn2.click(function () {
+      $('.modal-outer .section-title.mb-4').text('Узнать цену по акции на '+titleText);
+      $('.modal-outer').show();
+    });
+  });
+
+  $('.car').each(function () {
+    const titleText = $(this).find('.car__title .text-2xl').text();
+    const btn1 = $(this).find('.similar-car__button-1');
+    const btn2 = $(this).find('.similar-car__button-2');
+
+    btn1.click(function () {
+      $('.modal-outer .section-title.mb-4').text('Забронировать '+titleText);
+      $('.modal-outer').show();
+    });
+    btn2.click(function () {
+      $('.modal-outer .section-title.mb-4').text('Узнать цену по акции на '+titleText);
+      $('.modal-outer').show();
+    });
+  });
+
+
+
+$('.car-items__list .car-item').each(function () {
+    const titleText = $(this).find('.car-item__title').text();
+    const btn = $(this).find('.similar-car__button');    
+
+    btn.click(function () {
+      $('.modal-outer .section-title.mb-4').text('Забронировать '+titleText);
+      $('.modal-outer').show();
+    });
+    
+  });
+
+
+  
+
+  
+
+  
+
+
   $('.model-technical__panel-info button, .models-item__complectation-actions button').click(function () {
     $('.modal-outer .section-title.mb-4').text('Получить скидку');
     $('.modal-outer').show();
@@ -117,15 +168,62 @@ jQuery(document).ready(function( $ ) {
       },
       
     ]
-  });  
+  });
+
+  $('.similar-car__sl').slick({
+    infinite: true,    
+    speed: 300,
+    slidesToScroll: 1,
+    autoplay: false,    
+    slidesToShow: 3,
+    cssEase: 'linear',     
+    autoplaySpeed: 0,  
+    touchThreshold: 10,
+    arrows: false,
+    dots: true,
+    pauseOnHover: true,  
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          
+        }
+      },
+      {
+        breakpoint: 641,
+        settings: {
+          slidesToShow: 1,        
+        }
+      },
+      
+    ]
+  }); 
+
+
+   $('.car-item__image__sl').slick({
+    infinite: true,    
+    speed: 300,
+    slidesToScroll: 1,
+    autoplay: false,    
+    slidesToShow: 1,
+    cssEase: 'linear',     
+    autoplaySpeed: 0,  
+    touchThreshold: 10,
+    arrows: true,
+    dots: false,
+    pauseOnHover: true,  
+  }); 
+   
 
   $('.models-item__sl').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     fade: true,
     asNavFor: '.models-item__sl-thumbs'
   });
+
 
 
   $('.models-item__sl-thumbs').slick({
@@ -137,6 +235,7 @@ jQuery(document).ready(function( $ ) {
     centerMode: false,
     focusOnSelect: true
   });
+
 
 
 
@@ -154,7 +253,7 @@ jQuery(document).ready(function( $ ) {
 
 
   $('.button-top').click(function() {
-        $('html, body').animate({ scrollTop: 0 }, 200);
+    $('html, body').animate({ scrollTop: 0 }, 200);
   });
 
 
